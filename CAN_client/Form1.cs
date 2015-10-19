@@ -29,10 +29,17 @@ namespace CAN_client
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
+            Program.CloseConnection();
             Application.Exit();
         }
         public void button1_Click(object sender, EventArgs e)
         {
+            if (tbServer.Text == "" || tbLogin.Text == "" || tbPasswd.Text == "" || tbPort.Text == "")
+            {
+                MessageBox.Show("Tous les champs doivent etre remplis", "Réfléchi un peu.. O_o",
+                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             serv = tbServer.Text;
             port = int.Parse(tbPort.Text);
             login = tbLogin.Text;

@@ -22,12 +22,13 @@ namespace CAN_client
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            richTextBox1.SelectionFont = new Font("Arial", 14, FontStyle.Regular);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
+            Program.CloseConnection();
             Application.Exit();
         }
 
@@ -57,7 +58,7 @@ namespace CAN_client
                                   richTextBox1.Text += message2[i];
                               }
 
-                              richTextBox1.Text += System.Environment.NewLine;
+                             // richTextBox1.Text += System.Environment.NewLine;
                            }));
 
                       
@@ -75,7 +76,19 @@ namespace CAN_client
         {
             richTextBox1.SelectionStart = richTextBox1.Text.Length;
             richTextBox1.ScrollToCaret(); 
-        } 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "")
+            {
+                Program.SendData(textBox1.Text);
+                textBox1.Text = "";
+            }
+        }
+
+        
+
 
     }
 }

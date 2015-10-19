@@ -65,6 +65,7 @@
             // 
             this.tbPasswd.Location = new System.Drawing.Point(12, 165);
             this.tbPasswd.Name = "tbPasswd";
+            this.tbPasswd.PasswordChar = '☻';
             this.tbPasswd.Size = new System.Drawing.Size(214, 20);
             this.tbPasswd.TabIndex = 3;
             // 
@@ -127,6 +128,7 @@
             // 
             // Form1
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));

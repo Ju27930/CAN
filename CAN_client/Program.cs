@@ -46,7 +46,7 @@ namespace CAN_client
                 }
                 catch (Exception Ex)
                 {
-                    MessageBox.Show("Une erreur est survenue Motha fucka..\n\n" + Ex, "Oups j'ai peut être coupé le serveur?? :X",
+                 MessageBox.Show("Une erreur est survenue Motha fucka..\n\n" + Ex, "Oups j'ai peut être coupé le serveur?? :X",
                  MessageBoxButtons.OK, MessageBoxIcon.Error);
                     client = null;
                 }
@@ -54,22 +54,17 @@ namespace CAN_client
 
         }
 
-        static void CloseConnection()
+        public static void CloseConnection()
         {
             if (client == null)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("--Aucune connection en cours--");
                 return;
             }
 
             try
             {
                 client.Close();
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("--Connection fermée--");
                 client = null;
-                // Renvoyer le FORM 1 StartNode();
             }
             catch (Exception ex)
             {
@@ -84,9 +79,6 @@ namespace CAN_client
             NetworkStream nwStream = client.GetStream();
             byte[] bytesToRead = new byte[client.ReceiveBufferSize];
             int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
-            Console.ForegroundColor = ConsoleColor.Cyan;
-
-            Console.WriteLine("Received : " + Encoding.UTF8.GetString(bytesToRead, 0, bytesRead));
             if (Encoding.UTF8.GetString(bytesToRead, 0, bytesRead) == "ERREURLOGIN")
             {
                 MessageBox.Show("Le Login / Mot de passe est incorrecte", "Erreur d'identification",
@@ -102,7 +94,7 @@ namespace CAN_client
                 
             }
         }
-        static void SendData(string data)
+        public static void SendData(string data)
         {
             if (client == null)
             {
@@ -113,20 +105,13 @@ namespace CAN_client
 
             byte[] bytesToSend = UTF8Encoding.UTF8.GetBytes(data);
             NetworkStream nwStream = client.GetStream();
-
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("DATA : " + data);
             nwStream.Write(bytesToSend, 0, bytesToSend.Length);
-
             
+        string[] s2 = data.Split('|');
+        string instruction = s2[0];
+        
+        if (instruction == "LOGIN")             
             receiveData();
-
-
-
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("Enter data to send: ");
-            var data2 = Console.ReadLine();
-            SendData(data2);
 
         }
 
