@@ -22,7 +22,7 @@ namespace CAN_client
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            tbServer.Text = "85.93.88.27";
+            tbServer.Text = "85.93.88.2";
             tbPort.Text = "9000";
 
         }
