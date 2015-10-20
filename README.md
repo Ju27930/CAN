@@ -10,7 +10,7 @@ Afficher la liste des clients connectés
 
 
 # Le serveur en lui meme :
-
+```
 var net = require("net");
 var mysql = require('mysql');
 var server = net.createServer();
@@ -111,7 +111,7 @@ server.listen(9000, function () {
     console.log("Le serveur ecoute sur %j", server.address());
     
 });
-
+```
 
 
 
