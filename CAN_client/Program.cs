@@ -86,9 +86,9 @@ namespace CAN_client
             }
             else
             {
-                
 
-                 Form2 affForm2 = new Form2();
+                
+                Form2 affForm2 = new Form2();
                 Program.affForm1.Hide();
                 affForm2.ShowDialog();
                 

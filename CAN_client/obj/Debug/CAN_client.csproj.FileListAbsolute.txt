@@ -21,3 +21,10 @@ C:\Users\Administrateur\Desktop\Partage DIDI\PROJETS\CAN_client\CAN_client\obj\D
 C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\bin\Debug\CAN_client.exe.config
 C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\obj\Debug\CAN_client.exe
 C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\obj\Debug\CAN_client.pdb
+C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\bin\Debug\CAN_client.exe
+C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\bin\Debug\CAN_client.pdb
+C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\obj\Debug\CAN_client.csprojResolveAssemblyReference.cache
+C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\obj\Debug\CAN_client.Form1.resources
+C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\obj\Debug\CAN_client.Form2.resources
+C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\obj\Debug\CAN_client.Properties.Resources.resources
+C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\obj\Debug\CAN_client.csproj.GenerateResource.Cache
