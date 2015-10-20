@@ -9,7 +9,7 @@ Afficher la liste des clients connectés
 
 
 
-# Le serveur en lui meme ressemble a ca :
+# Le serveur en lui meme :
 
 var net = require("net");
 var mysql = require('mysql');
@@ -31,7 +31,7 @@ server.on("connection", function (socket) {
     console.log("nouveau client connecté %s", remoteAddress);
 	socket.name = remoteAddress;
 	socketCo.push(socket);
-
+	
     socket.on("data", function (d) {
         var s = String(d);
         var s2 = s.split("|");
