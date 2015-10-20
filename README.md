@@ -1,7 +1,7 @@
 # CAN_client
 
-+ Client TCP pour serveur nodejs
-Petit client de discution avec connection tcp et login via mysql
++ Client TCP C# pour serveur nodejs
+Petit client de discution privé avec connection tcp et login via mysql
 
 + TODO
 Afficher la liste des clients connectés
