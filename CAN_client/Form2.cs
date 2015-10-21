@@ -13,6 +13,8 @@ namespace CAN_client
 {
     public partial class Form2 : Form
     {
+        List<string> listConnecte = new List<string>();
+
         public Form2()
         {
             InitializeComponent();
@@ -20,9 +22,14 @@ namespace CAN_client
             backgroundWorker1.RunWorkerAsync();
         }
 
+        
+
         private void Form2_Load(object sender, EventArgs e)
         {
+
+           
             richTextBox1.SelectionFont = new Font("Arial", 14, FontStyle.Regular);
+            Program.SendData("WHO|");
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -47,8 +54,26 @@ namespace CAN_client
 
                     string message = Encoding.UTF8.GetString(bytesToRead, 0, bytesRead);
                     string[] message2 = message.Split('|');
-                    
+
+                    if (message2[0] == "WHO")
+                    {
+                        listBox1.Invoke(new Action(delegate()
+                            {
+                                listBox1.Items.Clear();
+                            }));
+                        for (int i = 1; i < message2.Length-1; i++)
+                              {
+                                  listConnecte.Add(message2[i]);
+                                  listBox1.Invoke(new Action(delegate()
+                                  {
+                                      listBox1.Items.Add(message2[i]);
+                                  }));
+                              }
                         
+
+                    }
+                    else
+                    {
                         richTextBox1.Invoke(new Action(delegate()
                           {
                               richTextBox1.Text += message2[0] + " > ";
@@ -58,9 +83,9 @@ namespace CAN_client
                                   richTextBox1.Text += message2[i];
                               }
 
-                             // richTextBox1.Text += System.Environment.NewLine;
-                           }));
-
+                              // richTextBox1.Text += System.Environment.NewLine;
+                          }));
+                    }
                       
                     
                 }
