@@ -28,3 +28,7 @@ C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\obj\Debug\CAN_client.Form1
 C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\obj\Debug\CAN_client.Form2.resources
 C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\obj\Debug\CAN_client.Properties.Resources.resources
 C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\obj\Debug\CAN_client.csproj.GenerateResource.Cache
+C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\bin\Debug\CAN_client.exe.manifest
+C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\bin\Debug\CAN_client.application
+C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\obj\Debug\CAN_client.exe.manifest
+C:\Users\metap\ownCloud\PROJETS\CAN_client\CAN_client\obj\Debug\CAN_client.application

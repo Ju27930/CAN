@@ -90,6 +90,7 @@ namespace CAN_client
                 
                 
                 Form2 affForm2 = new Form2();
+                
                 Program.affForm1.Hide();
                 affForm2.ShowDialog();
                 

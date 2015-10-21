@@ -27,7 +27,7 @@ namespace CAN_client
         private void Form2_Load(object sender, EventArgs e)
         {
 
-           
+            
             richTextBox1.SelectionFont = new Font("Arial", 14, FontStyle.Regular);
             Program.SendData("WHO|");
         }
@@ -110,6 +110,14 @@ namespace CAN_client
                 Program.SendData(textBox1.Text);
                 textBox1.Text = "";
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+                TopMost = true;
+            else
+                TopMost = false;
         }
 
         
