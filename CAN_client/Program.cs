@@ -11,20 +11,15 @@ namespace CAN_client
     public static class Program
     {
         static Form1 affForm1;
-        /// <summary>
-        /// Point d'entrée principal de l'application.
-        /// </summary>
+
         [STAThread]
         public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-             
             affForm1 = new Form1();
             affForm1.ShowDialog();
             Application.Run();
-            
-            
         }
 
         public static TcpClient client;
@@ -46,9 +41,9 @@ namespace CAN_client
                 }
                 catch (Exception Ex)
                 {
-                 MessageBox.Show("Une erreur est survenue Motha fucka..\n\n" + Ex, "Oups j'ai peut être coupé le serveur?? :X",
+                 MessageBox.Show("Une erreur est survenue Motha fucka..\n\n" + Ex, "Oups, le serveur semble indisponible",
                  MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    client = null;
+                 client = null;
                 }
             }
 
@@ -60,7 +55,6 @@ namespace CAN_client
             {
                 return;
             }
-
             try
             {
                 client.Close();
@@ -68,7 +62,6 @@ namespace CAN_client
             }
             catch (Exception ex)
             {
-                Console.WriteLine("erreur.. " + ex);
                 client = null;
             }
 
@@ -86,22 +79,16 @@ namespace CAN_client
             }
             else
             {
-
-                
-                
                 Form2 affForm2 = new Form2();
                 
                 Program.affForm1.Hide();
                 affForm2.ShowDialog();
-                
             }
         }
         public static void SendData(string data)
         {
             if (client == null)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("--Connection non etablie--");
                 return;
             }
 
@@ -116,11 +103,5 @@ namespace CAN_client
             receiveData();
 
         }
-
-
-
-    
-
-
     }
 }

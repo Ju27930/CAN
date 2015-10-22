@@ -18,16 +18,12 @@ namespace CAN_client
         public Form2()
         {
             InitializeComponent();
-
             backgroundWorker1.RunWorkerAsync();
         }
 
         
-
         private void Form2_Load(object sender, EventArgs e)
         {
-
-            
             richTextBox1.SelectionFont = new Font("Arial", 14, FontStyle.Regular);
             Program.SendData("WHO|");
         }
@@ -48,8 +44,7 @@ namespace CAN_client
                     NetworkStream nwStream = Program.client.GetStream();
                     byte[] bytesToRead = new byte[Program.client.ReceiveBufferSize];
                     int bytesRead = nwStream.Read(bytesToRead, 0, Program.client.ReceiveBufferSize);
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-
+                    //debug
                     Console.WriteLine("Received : " + Encoding.UTF8.GetString(bytesToRead, 0, bytesRead));
 
                     string message = Encoding.UTF8.GetString(bytesToRead, 0, bytesRead);
@@ -69,8 +64,6 @@ namespace CAN_client
                                       listBox1.Items.Add(message2[i]);
                                   }));
                               }
-                        
-
                     }
                     else
                     {
@@ -82,8 +75,6 @@ namespace CAN_client
                               {
                                   richTextBox1.Text += message2[i];
                               }
-
-                              // richTextBox1.Text += System.Environment.NewLine;
                           }));
                     }
                       
@@ -119,9 +110,5 @@ namespace CAN_client
             else
                 TopMost = false;
         }
-
-        
-
-
     }
 }
